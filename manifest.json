@@ -1,7 +1,7 @@
 {
-	"name": "New Tab URL",
+	"name": "New Tab URL ng",
 	"description": "Use a custom URL as the New Tab page without losing address bar focus",
-	"version": "0.1.1",
+	"version": "0.2.1",
 
 	"chrome_url_overrides": {
 		"newtab": "new-tab.html"
@@ -9,9 +9,7 @@
 
 	"options_page": "options.html",
 	"background": {
-		"scripts": [
-			"background.js"
-		]
+		"service_worker": "background.js"
 	},
 
 	"icons": {
@@ -19,7 +17,7 @@
 		"128": "icons/128.png"
 	},
 
-	"browser_action": {
+	"action": {
 		"default_icon": {
 			"48": "icons/48.png",
 			"128": "icons/128.png"
@@ -30,9 +28,11 @@
 
 	"permissions": [
 		"tabs",
-		"storage",
+		"storage"
+	],
+	"host_permissions": [
 		"file:///*"
 	],
 
-	"manifest_version": 2
+	"manifest_version": 3
 }
